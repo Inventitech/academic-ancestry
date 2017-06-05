@@ -85,6 +85,7 @@ def create_dot start_person
   }
   add_edges start_person, g
   g.output(:pdf => "academic_ancestry.pdf")
+  g.output(:png => "academic_ancestry.png")
   g.output(:dot => "academic_ancestry.dot")
 end
 

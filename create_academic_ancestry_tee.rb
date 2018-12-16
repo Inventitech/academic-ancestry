@@ -104,12 +104,18 @@ def add_edges(p, g)
 end
 
 '''Create a graph and add one new student (not yet in the database). Handy for new students who are not yet in the database.'''
-def create_ancestry_graph_add_leave_student(new_student, url1, url2)
-  # A way to insert onself when not yet in the database (with two supervisors)
+def create_ancestry_graph_add_leave_student(new_student, url1, url2=nil, url3=nil)
+  # A way to insert onself when not yet in the database (with up to three supervisors)
   advisor1 = traverse_person(url1)
-  advisor2 = traverse_person(url2)
   new_student.add_advisor(advisor1)
-  new_student.add_advisor(advisor2)
+  if !url2.nil?
+    advisor2 = traverse_person(url2)
+    new_student.add_advisor(advisor2)
+  end
+  if !url3.nil?
+    advisor3 = traverse_person(url3)
+    new_student.add_advisor(advisor3)
+  end
   @persons.add new_student
   create_dot new_student
 end
@@ -120,8 +126,11 @@ def create_ancestry_graph (url)
 end
 
 
-# Sample call for new PhD students:
-#create_ancestry_graph_add_leave_student(Person.new('Moritz Beller', 'Netherlands', '2017'), 'id.php?id=71273', 'id.php?id=134422')
+## Sample call for new PhD students not yet in the database:
+#create_ancestry_graph_add_leave_student(Person.new('A PhD', 'Netherlands', '2018'), 'id.php?id=71273', 'id.php?id=134422')
 
-# Sample call for
-create_ancestry_graph "id.php?id=125302"
+## Sample call with three advisors:
+create_ancestry_graph_add_leave_student(Person.new('Moritz Beller', 'Netherlands', '2018'), 'id.php?id=71273', 'id.php?id=134422', 'id.php?id=144358')
+
+## Sample call for an existing scholar
+#create_ancestry_graph "id.php?id=125302"

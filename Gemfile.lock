@@ -18,7 +18,6 @@ GEM
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     nokogiri (1.7.2-java)
-    nokogiri (1.7.2-java)
     ruby-graphviz (1.2.3)
     thread_safe (0.3.6)
     thread_safe (0.3.6-java)
@@ -35,4 +34,4 @@ DEPENDENCIES
   ruby-graphviz!
 
 BUNDLED WITH
-   1.15.1
+   1.16.2

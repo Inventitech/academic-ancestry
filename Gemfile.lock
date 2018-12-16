@@ -1,27 +1,27 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.1.1)
+    activesupport (5.2.2)
       concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (~> 0.7)
+      i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    concurrent-ruby (1.0.5)
-    concurrent-ruby (1.0.5-java)
-    i18n (0.8.4)
-    mini_portile2 (2.1.0)
-    minitest (5.10.2)
+    concurrent-ruby (1.1.4)
+    i18n (1.2.0)
+      concurrent-ruby (~> 1.0)
+    mini_portile2 (2.3.0)
+    minitest (5.11.3)
     nikkou (0.0.5)
       activesupport
       nokogiri
       tzinfo
-    nokogiri (1.7.2)
-      mini_portile2 (~> 2.1.0)
-    nokogiri (1.7.2-java)
-    ruby-graphviz (1.2.3)
+    nokogiri (1.8.5)
+      mini_portile2 (~> 2.3.0)
+    nokogiri (1.8.5-java)
+    ruby-graphviz (1.2.4)
     thread_safe (0.3.6)
     thread_safe (0.3.6-java)
-    tzinfo (1.2.3)
+    tzinfo (1.2.5)
       thread_safe (~> 0.1)
 
 PLATFORMS
@@ -30,7 +30,7 @@ PLATFORMS
 
 DEPENDENCIES
   nikkou!
-  nokogiri!
+  nokogiri (>= 1.8.2)!
   ruby-graphviz!
 
 BUNDLED WITH
